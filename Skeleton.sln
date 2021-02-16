@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing1", "Testing1\Testin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing2", "Testing2\Testing2.csproj", "{78AF0CA5-71B3-4959-9E05-A64ED523FFA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing3", "Testing3\Testing3.csproj", "{CDEAB9D5-740F-43A5-953F-FC14371EFFAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingStock", "Testing3\TestingStock.csproj", "{CDEAB9D5-740F-43A5-953F-FC14371EFFAC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing6", "Testing6\Testing6.csproj", "{288EB452-7B75-4934-B0BB-07415B6A81FE}"
 EndProject
