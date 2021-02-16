@@ -22,7 +22,7 @@ namespace Testing3
             // ditto
             clsStock AProduct = new clsStock();
             // create test data to test the property
-            int TestData = 0;
+            int TestData = 1;
             AProduct.ProductId = TestData;
             Assert.AreEqual(AProduct.ProductId, TestData);
         }
