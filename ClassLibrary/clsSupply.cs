@@ -1,0 +1,6 @@
+﻿namespace ClassLibrary
+{
+    class clsSupply
+    {
+    }
+}
