@@ -10,6 +10,28 @@
     <form id="form1" runat="server">
         <div>
         </div>
+        <asp:Label ID="txtCustomerId" runat="server" Text="Customer Id  " height="19px" width="130px"></asp:Label>
+        <asp:TextBox ID="TextBox1" runat="server" style="margin-left: 14px" Width="253px" height="22px"></asp:TextBox>
+        <p>
+            <asp:Label ID="CustomerFullName" runat="server" Text="Customer Full Name  "></asp:Label>
+            <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 13px" Width="253px" Height="22px"></asp:TextBox>
+        </p>
+        <asp:Label ID="RegisteredDate" runat="server" Text="Registered Date " height="19px" width="130px"></asp:Label>
+        <asp:TextBox ID="TextBox3" runat="server" style="margin-left: 11px" height="22px" width="253px"></asp:TextBox>
+        <p>
+            <asp:Label ID="CustomerPoint" runat="server" Text="Customer Point " height="19px" width="130px"></asp:Label>
+            <asp:TextBox ID="TextBox4" runat="server" style="margin-left: 8px" height="22px" width="253px"></asp:TextBox>
+        </p>
+        <asp:Label ID="ProductId" runat="server" Text="Product Id " height="19px" width="130px"></asp:Label>
+        <asp:TextBox ID="TextBox5" runat="server" style="margin-left: 10px" Width="253px" height="22px"></asp:TextBox>
+        <p>
+            <asp:CheckBox ID="Active" runat="server" />
+        </p>
+        <asp:Label ID="ErrorMessages" runat="server" Text="lblError"></asp:Label>
+        <p>
+            <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
+            <asp:Button ID="btnCancel" runat="server" style="margin-left: 34px" Text="Cancel" />
+        </p>
     </form>
 </body>
 </html>
