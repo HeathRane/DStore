@@ -87,7 +87,7 @@ namespace ClassLibrary
             }
         }
 
-        public bool Find(int customerId)
+        public bool Find(int CustomerId)
         {
             //set the private data members to the test data value
             mCustomerId = 21;
