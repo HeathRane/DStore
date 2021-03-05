@@ -89,6 +89,15 @@ namespace ClassLibrary
 
         public bool Find(int CustomerId)
         {
+            //create an intance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+
+            //add the parameter for the address no to search for
+            DB.AddParameter("@CustomerId", CustomerId);
+
+            //execute the stored procedure
+            DB.Execute("");
+            
             //set the private data members to the test data value
             mCustomerId = 21;
 
