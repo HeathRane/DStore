@@ -96,24 +96,30 @@ namespace ClassLibrary
             DB.AddParameter("@CustomerId", CustomerId);
 
             //execute the stored procedure
-            DB.Execute("");
-            
-            //set the private data members to the test data value
-            mCustomerId = 21;
+            DB.Execute("sproc_table_Customer_FilterByCustomerID");
 
-            mCustomerRegisteredDate = Convert.ToDateTime("05/03/2021");
+            //if one record is found (there is should be either one or zero)
+            if(DB.Count == 1)
+            {
+                //copy the data from the database to the private data members
+                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
+                mCustomerRegisteredDate = Convert.ToDateTime(DB.DataTable.Rows[0]["RegisteredDate"]);
+                mName = Convert.ToString(DB.DataTable.Rows[0]["CustomerFullName"]);
+                mProductId = Convert.ToInt32(DB.DataTable.Rows[0]["ProductId"]);
+                mPoint = Convert.ToDouble(DB.DataTable.Rows[0]["CustomerPoint"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["CustomerActivity"]);
 
-            mName = "Zeynep";
+                //return that everything worked okay
+                return true;
+            }
 
-            mProductId = 1;
-
-            mPoint = 1.5;
-
-            mActive = true;
-
-            //alway return true
-
-            return true;
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+                     
         }
     }
 }
