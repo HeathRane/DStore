@@ -10,12 +10,13 @@
     <form id="form1" runat="server">
         <asp:Label ID="lblStaffNumber" runat="server" Text="StaffNumber"></asp:Label>
         <asp:TextBox ID="txtStaffNumber" runat="server"></asp:TextBox>
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
         <p>
             <asp:Label ID="lbStaffName" runat="server" Text="StaffName"></asp:Label>
             <asp:TextBox ID="txtStaffName" runat="server"></asp:TextBox>
         </p>
         <asp:Label ID="lblStaffSalary" runat="server" Text="StaffSalary"></asp:Label>
-        <asp:TextBox ID="txtStaffStatus" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtStaffSalary" runat="server"></asp:TextBox>
         <p>
             <asp:Label ID="lblStaffCredit" runat="server" Text="StaffCredit"></asp:Label>
             <asp:TextBox ID="txtStaffCredit" runat="server"></asp:TextBox>
