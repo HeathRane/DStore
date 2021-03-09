@@ -98,7 +98,7 @@ namespace Testing5
             //Boolean variable to store the results of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 CustomerId = 21;
+            Int32 CustomerId = 3;
             //invoe the method 
             Found = theCustomer.Find(CustomerId);
             //test to see if the result is true
@@ -115,11 +115,11 @@ namespace Testing5
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with method
-            Int32 CustomerId = 21;
+            Int32 CustomerId = 3;
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the customer id
-            if (theCustomer.CustomerId != 21)
+            if (theCustomer.CustomerId != 3)
             {
                 OK = false;
             }
@@ -137,11 +137,11 @@ namespace Testing5
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerId = 21;
+            Int32 CustomerId = 3;
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the customer name
-            if (theCustomer.Name != "Zeynep")
+            if (theCustomer.Name != "Nursah Demi")
             {
                 OK = false;
             }
@@ -159,11 +159,11 @@ namespace Testing5
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 CustomerId = 21;
+            Int32 CustomerId = 3;
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the registered date
-            if (theCustomer.CustomerRegisteredDate != Convert.ToDateTime("05/03/2021"))
+            if (theCustomer.CustomerRegisteredDate != Convert.ToDateTime("08/03/2021"))
             {
                 OK = false;
             }
@@ -181,11 +181,11 @@ namespace Testing5
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with method
-            Int32 CustomerId = 21;
+            Int32 CustomerId = 3;
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the product id
-            if (theCustomer.ProductId != 1)
+            if (theCustomer.ProductId != 35)
             {
                 OK = false;
             }
@@ -203,11 +203,11 @@ namespace Testing5
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with method
-            Int32 CustomerId = 21;
+            Int32 CustomerId = 3;
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the customer point
-            if (theCustomer.Point != 1.5)
+            if (theCustomer.Point != 20)
             {
                 OK = false;
             }
@@ -224,7 +224,7 @@ namespace Testing5
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with method
-            Int32 CustomerId = 21;
+            Int32 CustomerId = 3;
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the customer activity

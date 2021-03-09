@@ -96,7 +96,7 @@ namespace ClassLibrary
             DB.AddParameter("@CustomerId", CustomerId);
 
             //execute the stored procedure
-            DB.Execute("sproc_table_Customer_FilterByCustomerID");
+            DB.Execute("sproc_table_Customer_FilterBycustomerID");
 
             //if one record is found (there is should be either one or zero)
             if(DB.Count == 1)
