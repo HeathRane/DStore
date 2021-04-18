@@ -126,7 +126,7 @@ namespace ClassLibrary
                      
         }
 
-        public string Valid (string customerId, string fullName, string registeredDate, string productId, string point, string activity) 
+        public string Valid(string customerId, string fullName, string registeredDate, string productId, string point, string activity) 
         {
             return " ";
 
