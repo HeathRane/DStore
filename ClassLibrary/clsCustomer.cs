@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
@@ -124,7 +128,7 @@ namespace ClassLibrary
 
         public string Valid (string customerId, string fullName, string registeredDate, string productId, string point, string activity) 
         {
-            
+            return " ";
 
         }
     }

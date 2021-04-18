@@ -10,9 +10,9 @@ public partial class _1_DataEntry : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        clsCustomer theCustomer = new clsCustomer ();
-        theCustomer = (clsCustomer)Session[theCustomer];
-        Response.Write(theCustomer.CustomerID);
+        clsCustomer theCustomer = new clsCustomer();
+        theCustomer = (clsCustomer)Session["theCustomer"];
+        Response.Write(theCustomer.CustomerId);
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -42,11 +42,12 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
         if (Found == true)
         {
-            txtName.Text = theCustomer.Name;
-            txtCustomerRegisteredDate.Text = theCustomer.CustomerRegisteredDate.ToString;
-            txtActive.Text = theCustomer.Active.ToString;
-            txtPoint.Text = theCustomer.Point.ToString;
-            txtProductId = theCustomer.ProductId.ToString;
+            txtFullName.Text = theCustomer.Name;
+            txtRegisteredDate.Text = theCustomer.CustomerRegisteredDate.ToString();
+            Active.Text = theCustomer.Active.ToString();
+            txtCustomerPoint.Text = theCustomer.Point.ToString ();
+            txtProductId.Text = theCustomer.ProductId.ToString () ;
         }
     }
+
 }
