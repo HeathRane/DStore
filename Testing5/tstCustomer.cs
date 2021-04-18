@@ -7,6 +7,15 @@ namespace Testing5
     [TestClass]
     public class tstCustomer
     {
+        //good test data
+        //create some data to pass to the test 
+        string customerId = "4";
+        string fullName = "Zeynep Tugce";
+        string registeredDate = "03-07-2021";
+        string productId = "40";
+        string point = "0";
+        string activity = "1";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -235,5 +244,20 @@ namespace Testing5
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+        
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomer theCustomer = new clsCustomer();
+            //string variable to store any error message
+            String Error = "";
+            //invoke the method
+            Error = theCustomer.Valid(customerId, registeredDate, fullName, productId, point, activity);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+
     }
 }

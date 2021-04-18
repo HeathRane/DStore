@@ -10,9 +10,9 @@ public partial class _1_DataEntry : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        clsCustomer theCustomer = new clsCustomer;
+        clsCustomer theCustomer = new clsCustomer ();
         theCustomer = (clsCustomer)Session[theCustomer];
-        Response.Write(theCustomer.CustomerID)
+        Response.Write(theCustomer.CustomerID);
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     protected void btnFind_Click(object sender, EventArgs e)
     {
-        clsCustomer theCustomer = new clsCustomer;
+        clsCustomer theCustomer = new clsCustomer ();
 
         Int32 CustomerId;
 
