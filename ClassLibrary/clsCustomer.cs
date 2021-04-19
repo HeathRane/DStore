@@ -126,35 +126,50 @@ namespace ClassLibrary
                      
         }
 
-        public string Valid(string customerId, string customerName, string registeredDate, string productId, string point, string activity) 
+        public string Valid(string customerId,
+                            string registeredDate,
+                            string customerName, 
+                            string productId, 
+                            string point, 
+                            string activity) 
         {
-            String Error = " ";
+            String Error = "";
 
             DateTime DateTemp;
 
-            if (Name.Length == 0) //?
+            if (customerName.Length == 0) 
             {
                 Error = Error + "The name may not be blank: ";
 
             }
-            if (Name.Length > 50)
+            if (customerName.Length > 50)
             {
                 Error = Error + "The name must contain less than 51 characters: ";
             }
 
-            DateTemp = Convert.ToDateTime(registeredDate);
-
-            if (DateTemp < DateTime.Now.Date)
+            
+            try
             {
-                Error = Error + "the date cannot be in the past: ";
+                DateTemp = Convert.ToDateTime(registeredDate);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "the date cannot be in the past: ";
 
+                }
+
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error = Error + "the date cannot be in the future: ";
+                }
+           
             }
-
-            if (DateTemp > DateTime.Now.Date)
+            catch
             {
-                Error = Error + "the date cannot be in the future: ";
+                Error = Error + "the date was not a valid date: ";
             }
             return Error;
-        }
+            }
+        
+            
     }
 }
