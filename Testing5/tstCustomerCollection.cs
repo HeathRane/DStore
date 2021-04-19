@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace TestingCustomer
 {
     [TestClass]
-    public class tstCustomerCollectioin
+    public class tstCustomerCollection
     {
         [TestMethod]
         public void InstanceOK()
@@ -42,6 +42,28 @@ namespace TestingCustomer
             allCustomers.CustomerList = TestList;
             //test to see that the two values are the same
             Assert.AreEqual(allCustomers.CustomerList, TestList);
+        }
+
+        [TestMethod]
+
+        public void CountPropertyOK()
+        {
+            //create an instance of the class we wantto create
+            clsCustomerCollection allCustomers = new clsCustomerCollection();
+            //create some test data to assign to the property
+            Int32 SomeCount = 0;
+            //assign the data to the property
+            allCustomer.Count = SomeCount;
+            //test to see that the two values are the same
+            Assert.AreEqual(allCustomer.Count, SomeCount);
+
+        }
+
+        [TestMethod]
+
+        public void ThisCustomerPropertyOK ()
+        {
+            clsCustomerCollection allCustomers = new clsCustomerCollection();
         }
 
     }
