@@ -9,12 +9,8 @@ namespace TestingCustomer
     {
         //good test data
         //create some data to pass to the test 
-        string CustomerId = "4";
         string Name = "Zeynep Tugce";
         string CustomerRegisteredDate = "07/03/2021";
-        string ProductId = "40";
-        string Point = "0";
-        string Active = "1";
 
         [TestMethod]
         public void InstanceOK()
@@ -253,7 +249,7 @@ namespace TestingCustomer
             //string variable to store any error message
             String Error = "";
             //invoke the method
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -267,7 +263,7 @@ namespace TestingCustomer
             //this should fail
             string Name = "";
             //invoke the method
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -290,7 +286,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -320,7 +316,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -348,7 +344,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -377,7 +373,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -405,7 +401,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -435,7 +431,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -464,7 +460,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active); ;
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name); ;
 
             //test to see that the result is correct
 
@@ -504,7 +500,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -546,7 +542,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -584,7 +580,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -624,7 +620,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -666,7 +662,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 
@@ -692,7 +688,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerId, CustomerRegisteredDate, Name, ProductId, Point, Active);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
 
             //test to see that the result is correct
 

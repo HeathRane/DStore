@@ -126,12 +126,8 @@ namespace ClassLibrary
                      
         }
 
-        public string Valid(string customerId,
-                            string registeredDate,
-                            string customerName, 
-                            string productId, 
-                            string point, 
-                            string activity) 
+        public string Valid(string registeredDate,
+                            string customerName) 
         {
             String Error = "";
 

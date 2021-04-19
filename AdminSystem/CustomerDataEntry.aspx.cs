@@ -19,15 +19,34 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
         //create a new instance of clsCustomer
         clsCustomer theCustomer = new clsCustomer();
-        //capture the CustomerId
-        theCustomer.CustomerId = Convert.ToInt32(txtCustomerId.Text);
-        //store the customerId in the session object
-        Session["theCustomer"] = theCustomer;
-        //navigate to the viewer paga
-        Response.Redirect("CustomerViewer.aspx");
+
+        //capture the full name
+        string Name = txtFullName.Text;
+
+        //capture registered date
+        string RegisteredDate = txtRegisteredDate.Text;
+
+        //variable to store any error messages
+        string Error = "";
+
+        //validate the data
+        Error = theCustomer.Valid(RegisteredDate, Name);
+        if (Error == "")
+        {
+            //capture the name
+            theCustomer.Name = Name;
+            //capture the registered date
+            theCustomer.CustomerRegisteredDate = Convert.ToDateTime(RegisteredDate);
+
+            theCustomer.CustomerId = Convert.ToInt32(txtCustomerId.Text);
+            //store the customerId in the session object
+            Session["theCustomer"] = theCustomer;
+            //navigate to the viewer paga
+            Response.Redirect("CustomerViewer.aspx");
+        }
+            
     }
-
-
+    
     protected void btnFind_Click(object sender, EventArgs e)
     {
         clsCustomer theCustomer = new clsCustomer ();
