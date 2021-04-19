@@ -12,7 +12,7 @@ namespace TestingCustomer
         public void InstanceOK()
         {
             //create an instance of the class we want to create
-            clsCustomerCollection allCustomers = new clsCustomerCollection;
+            clsCustomerCollection allCustomers = new clsCustomerCollection();
             //test to see that it exists
             Assert.IsNotNull(allCustomers);
         }
