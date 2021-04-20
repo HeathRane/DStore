@@ -10,30 +10,33 @@ namespace ClassLibrary
     {
         public clsCustomerCollection()
         {
-            clsCustomer TestItem = new clsCustomer();
+            Int32 Index = 0;
 
-            TestItem.Active = true;
-            TestItem.CustomerId = 4;
-            TestItem.Name = "Zeynep Tugce";
-            TestItem.CustomerRegisteredDate = DateTime.Now.Date;
-            TestItem.ProductId = 40;
-            TestItem.Point = 0;
-        
-            mCustomerList.Add(TestItem);
+            Int32 RecordCount = 0;
 
-            TestItem = new clsCustomer();
+            clsDataConnection DB = new clsDataConnection();
 
-            TestItem.Active = true;
-            TestItem.CustomerId = 3;
-            TestItem.Name = "Nursah Demi";
-            TestItem.CustomerRegisteredDate = DateTime.Now.Date;
-            TestItem.ProductId = 30;
-            TestItem.Point = 20;
+            DB.Execute("sproc_tblCustomer_SelectAll");
 
-            mCustomerList.Add(TestItem);
+            RecordCount = DB.Count;
+
+            while (Index < RecordCount)
+            {
+                clsCustomer theCustomer = new clsCustomer();
+
+                theCustomer.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
+                theCustomer.CustomerId = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerId"]);
+                theCustomer.Name = Convert.ToString(DB.DataTable.Rows[Index]["Name"]);
+                theCustomer.CustomerRegisteredDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["CustomerRegisteredeDate"]);
+                theCustomer.ProductId = Convert.ToInt32(DB.DataTable.Rows[Index]["ProductId"]);
+                theCustomer.Point = Convert.ToDouble(DB.DataTable.Rows[Index]["Point"]);
+
+                mCustomerList.Add(theCustomer);
+
+                Index++;
+            }
         }
-        
-
+     
         public clsCustomer ThisCustomer;
         List<clsCustomer> mCustomerList = new List<clsCustomer>();
         public List<clsCustomer> CustomerList
