@@ -113,7 +113,35 @@ namespace TestingCustomer
             Assert.AreEqual(allCustomers.ThisCustomer, TestItem);
 
         }
-           
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {          
+                clsCustomerCollection allCustomers = new clsCustomerCollection();
+
+                clsCustomer TestItem = new clsCustomer();
+
+                Int32 PrimaryKey = 0;
+
+                TestItem.Active = true;
+                TestItem.CustomerId = 4;
+                TestItem.Name = "Zeynep Tugce";
+                TestItem.CustomerRegisteredDate = DateTime.Now.Date;
+                TestItem.ProductId = 40;
+                TestItem.Point = 0;
+
+                allCustomers.ThisCustomer = TestItem;
+
+                PrimaryKey = allCustomers.Update();
+
+                TestItem.CustomerId = PrimaryKey;
+
+                allCustomers.ThisCustomer.Find(PrimaryKey);
+
+                Assert.AreEqual(allCustomers.ThisCustomer, TestItem);
+
+            }
+
         }
 
     }
