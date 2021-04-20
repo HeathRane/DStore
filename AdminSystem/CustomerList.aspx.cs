@@ -20,10 +20,10 @@ public partial class _1_List : System.Web.UI.Page
     {
         clsCustomerCollection Customers = new clsCustomerCollection();
 
-        lstCustomers.DataSource = Customers.CustomerList;
-        lstCustomers.DataValueField = "CustomerId";
-        lstCustomers.DataTextField = "Name";
-        lstCustomers.DataBind();
+        lstCustomersList.DataSource = Customers.CustomerList;
+        lstCustomersList.DataValueField = "CustomerId";
+        lstCustomersList.DataTextField = "Name";
+        lstCustomersList.DataBind();
 
     }
     
@@ -33,5 +33,15 @@ public partial class _1_List : System.Web.UI.Page
         Session["CustomerId"] = -1;
 
         Response.Redirect("theCustomer.aspx");
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }
