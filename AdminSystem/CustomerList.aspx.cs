@@ -26,4 +26,12 @@ public partial class _Default : System.Web.UI.Page
         lstCustomers.DataBind();
 
     }
+    
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+
+        Session["CustomerId"] = -1;
+
+        Response.Redirect("theCustomer.aspx");
+    }
 }

@@ -37,12 +37,26 @@ public partial class _1_DataEntry : System.Web.UI.Page
             theCustomer.Name = Name;
             //capture the registered date
             theCustomer.CustomerRegisteredDate = Convert.ToDateTime(RegisteredDate);
+            //capture customerId
+            theCustomer.CustomerId = Convert.ToInt32(CustomerId);
+            //capture Active
+            theCustomer.Active = Convert.ToBoolean(Active);//chkActive.Checked;
+            //capture productId
+            theCustomer.ProductId = Convert.ToInt32(ProductId);
+            //capture point
+            theCustomer.Point = Convert.ToDouble(CustomerPoint);
 
-            theCustomer.CustomerId = Convert.ToInt32(txtCustomerId.Text);
-            //store the customerId in the session object
-            Session["theCustomer"] = theCustomer;
-            //navigate to the viewer paga
-            Response.Redirect("CustomerViewer.aspx");
+            clsCustomerCollection CustomerList = new clsCustomerCollection();
+
+            CustomerList.ThisCustomer = theCustomer;
+
+            CustomerList.Add();
+            Response.Redirect("CustomerList.aspx");
+                        
+        }
+        else
+        {
+            lblError.Text = Error;
         }
             
     }

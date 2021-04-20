@@ -4,6 +4,7 @@
 <script runat="server">
 
 
+
 </script>
 
 
@@ -14,8 +15,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        </div>
         <asp:ListBox ID="lstCustomersList" runat="server" Height="324px" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" Width="433px"></asp:ListBox>
+        </div>
+        <asp:Button ID="btnAdd" runat="server" OnClick="Button1_Click" Text="Button" />
     </form>
 </body>
 </html>

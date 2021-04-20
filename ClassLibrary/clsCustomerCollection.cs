@@ -8,6 +8,20 @@ namespace ClassLibrary
 {
     public class clsCustomerCollection
     {
+        clsCustomer mThisCustomer = new clsCustomer();
+
+        public clsCustomer ThisCustomer
+        {
+            get
+            {
+                return mThisCustomer;
+            }
+            set
+            {
+                mThisCustomer = value;
+            }
+        }
+
         public clsCustomerCollection()
         {
             Int32 Index = 0;
@@ -37,7 +51,6 @@ namespace ClassLibrary
             }
         }
      
-        public clsCustomer ThisCustomer;
         List<clsCustomer> mCustomerList = new List<clsCustomer>();
         public List<clsCustomer> CustomerList
         {
@@ -64,5 +77,18 @@ namespace ClassLibrary
             }
         }
 
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@CustomerID", mThisCustomer.CustomerId);
+            DB.AddParameter("@CustomerFullName", mThisCustomer.Name);
+            DB.AddParameter("@CustomerActivity", mThisCustomer.Active);
+            DB.AddParameter("@RegisteredDate", mThisCustomer.CustomerRegisteredDate);
+            DB.AddParameter("@CustomerPoint", mThisCustomer.Point);
+            DB.AddParameter("ProductID", mThisCustomer.ProductId);
+
+            return DB.Execute("sproc_table_Customer_Insert");
+        }
     }
 }

@@ -18,7 +18,6 @@ namespace TestingCustomer
         }
 
         [TestMethod]
-
         public void CustomerListOK ()
         {
             //create an instance of the class we want to create
@@ -45,7 +44,6 @@ namespace TestingCustomer
         }       
 
         [TestMethod]
-
         public void ThisCustomerPropertyOK ()
         {
             clsCustomerCollection allCustomers = new clsCustomerCollection();
@@ -66,7 +64,6 @@ namespace TestingCustomer
         }
 
         [TestMethod]
-
         public void ListAndCountOK ()
         {
             clsCustomerCollection allCustomers = new clsCustomerCollection();
@@ -87,6 +84,34 @@ namespace TestingCustomer
             allCustomers.CustomerList = TestList;
 
             Assert.AreEqual(allCustomers.Count, TestList.Count);
+        }
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsCustomerCollection allCustomers = new clsCustomerCollection();
+
+            clsCustomer TestItem = new clsCustomer();
+
+            Int32 PrimaryKey = 0;
+
+            TestItem.Active = true;
+            TestItem.CustomerId = 4;
+            TestItem.Name = "Zeynep Tugce";
+            TestItem.CustomerRegisteredDate = DateTime.Now.Date;
+            TestItem.ProductId = 40;
+            TestItem.Point = 0;
+
+            allCustomers.ThisCustomer = TestItem;
+
+            PrimaryKey = allCustomers.Add();
+
+            TestItem.CustomerId = PrimaryKey;
+
+            allCustomers.ThisCustomer.Find(PrimaryKey);
+
+            Assert.AreEqual(allCustomers.ThisCustomer, TestItem);
+
         }
            
         }
