@@ -16,7 +16,7 @@ namespace ClassLibrary
 
             clsDataConnection DB = new clsDataConnection();
 
-            DB.Execute("sproc_tblCustomer_SelectAll");
+            DB.Execute("sproc_table_Customer_SelectAll");
 
             RecordCount = DB.Count;
 
@@ -24,12 +24,12 @@ namespace ClassLibrary
             {
                 clsCustomer theCustomer = new clsCustomer();
 
-                theCustomer.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
+                theCustomer.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["CustomerActivity"]);
                 theCustomer.CustomerId = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerId"]);
-                theCustomer.Name = Convert.ToString(DB.DataTable.Rows[Index]["Name"]);
-                theCustomer.CustomerRegisteredDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["CustomerRegisteredeDate"]);
+                theCustomer.Name = Convert.ToString(DB.DataTable.Rows[Index]["CustomerFullName"]);
+                theCustomer.CustomerRegisteredDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["RegisteredDate"]);
                 theCustomer.ProductId = Convert.ToInt32(DB.DataTable.Rows[Index]["ProductId"]);
-                theCustomer.Point = Convert.ToDouble(DB.DataTable.Rows[Index]["Point"]);
+                theCustomer.Point = Convert.ToDouble(DB.DataTable.Rows[Index]["CustomerPoint"]);
 
                 mCustomerList.Add(theCustomer);
 
