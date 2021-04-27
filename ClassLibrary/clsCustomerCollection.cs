@@ -89,7 +89,6 @@ namespace ClassLibrary
         {
             clsDataConnection DB = new clsDataConnection();
 
-            DB.AddParameter("@CustomerID", mThisCustomer.CustomerId);
             DB.AddParameter("@CustomerFullName", mThisCustomer.Name);
             DB.AddParameter("@CustomerActivity", mThisCustomer.Active);
             DB.AddParameter("@RegisteredDate", mThisCustomer.CustomerRegisteredDate);
