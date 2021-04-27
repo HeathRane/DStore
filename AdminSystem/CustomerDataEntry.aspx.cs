@@ -40,7 +40,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             //capture customerId
             theCustomer.CustomerId = Convert.ToInt32(CustomerId);
             //capture Active
-            theCustomer.Active = chkActive.Checked;
+            theCustomer.Active = Active.Checked;
             //capture productId
             theCustomer.ProductId = Convert.ToInt32(ProductId);
             //capture point

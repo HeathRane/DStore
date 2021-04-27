@@ -24,15 +24,23 @@ namespace ClassLibrary
 
         public clsCustomerCollection()
         {
-            Int32 Index = 0;
-
-            Int32 RecordCount = 0;
 
             clsDataConnection DB = new clsDataConnection();
 
             DB.Execute("sproc_table_Customer_SelectAll");
 
+            PopulateArray(DB);
+
+        }
+        void PopulateArray (clsDataConnection DB)
+        {
+            Int32 Index = 0;
+
+            Int32 RecordCount = 0;
+
             RecordCount = DB.Count;
+
+            mCustomerList = new List<clsCustomer>();
 
             while (Index < RecordCount)
             {
@@ -107,11 +115,22 @@ namespace ClassLibrary
 
         public void Delete()
         {
-            clsDataConnection DB = new clsDataConnection;
+            clsDataConnection DB = new clsDataConnection ();
 
             DB.AddParameter("@CustomerId", mThisCustomer.CustomerId);
 
             DB.Execute("sproc_table_Customer_Delete");
+        }
+
+        public void ReportByName(string v)
+        {
+            clsDataConnection DB = new clsDataConnection();
+
+            DB.AddParameter("@ProductId", Name);
+
+            DB.Execute("sproc_table_Customer_FilterByProductId");
+
+            PopulateArray(DB);
         }
     }
    

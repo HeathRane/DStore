@@ -20,6 +20,14 @@
         <asp:Button ID="btnAdd" runat="server" OnClick="Button1_Click" Text="Add" />
         <asp:Button ID="btnEdit" runat="server" Height="28px" OnClick="Button1_Click1" style="margin-left: 30px" Text="Edit" Width="51px" />
         <asp:Button ID="btnDelete" runat="server" style="margin-left: 30px" Text="Delete" Width="44px" />
+        <p style="width: 266px">
+            <asp:Label ID="LblName" runat="server" Text="Enter Name"></asp:Label>
+            <asp:TextBox ID="TxtName" runat="server" style="margin-left: 28px" Width="128px"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Button ID="btnApply" runat="server" OnClick="btnApply_Click" Text="Apply" />
+            <asp:Button ID="btnClear" runat="server" OnClick="btnClear_Click" style="margin-left: 24px" Text="Clear" />
+        </p>
         <p>
             <asp:Label ID="lblError" runat="server" Text="[lblError]"></asp:Label>
         </p>

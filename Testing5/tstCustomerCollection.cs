@@ -174,6 +174,33 @@ namespace TestingCustomer
 
         }
 
+        [TestMethod]
+        public void ReportByNameOK()
+        {
+            
+            clsCustomerCollection filteredCustomers = new clsCustomerCollection();
+
+            Boolean OK = true;
+
+            filteredCustomers.ReportByName(""); //?????????
+
+            if (filteredCustomers.Count == 2)
+            {
+                if (filteredCustomers.CustomerList[0].CustomerId != 2)
+                {
+                    OK = false;
+                }
+
+                if (filteredCustomers.CustomerList[1].CustomerId != 3)
+                {
+                    OK = false;
+                }
+            }
+
+            Assert.IsTrue(OK);
+
+        }
+
     }
 
     }
