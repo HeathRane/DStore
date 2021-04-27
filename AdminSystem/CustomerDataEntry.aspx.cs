@@ -40,7 +40,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             //capture customerId
             theCustomer.CustomerId = Convert.ToInt32(CustomerId);
             //capture Active
-            theCustomer.Active = Convert.ToBoolean(Active);//chkActive.Checked;
+            theCustomer.Active = chkActive.Checked;
             //capture productId
             theCustomer.ProductId = Convert.ToInt32(ProductId);
             //capture point
@@ -48,15 +48,29 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
             clsCustomerCollection CustomerList = new clsCustomerCollection();
 
-            CustomerList.ThisCustomer = theCustomer;
+            if (CustomerId == -1)
+            {
+                CustomerList.ThisCustomer = theCustomer;
 
-            CustomerList.Add();
+                CustomerList.Add();
+            }
+
+            else
+            {
+                CustomerList.ThisCustomer.Find(CustomerId);
+
+                CustomerList.ThisCustomer = theCustomer;
+
+                CustomerList.Update();
+
+            }
+
             Response.Redirect("CustomerList.aspx");
                         
         }
         else
         {
-            lblError.Text = Error;
+            lblError.Text = "Error";
         }
             
     }
