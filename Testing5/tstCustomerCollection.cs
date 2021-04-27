@@ -142,7 +142,39 @@ namespace TestingCustomer
 
             }
 
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsCustomerCollection allCustomers = new clsCustomerCollection();
+
+            clsCustomer TestItem = new clsCustomer();
+
+            Int32 PrimaryKey = 0;
+
+            TestItem.Active = true;
+            TestItem.CustomerId = 4;
+            TestItem.Name = "Zeynep Tugce";
+            TestItem.CustomerRegisteredDate = DateTime.Now.Date;
+            TestItem.ProductId = 40;
+            TestItem.Point = 0;
+
+            allCustomers.ThisCustomer = TestItem;
+
+            PrimaryKey = allCustomers.Add();
+
+            TestItem.CustomerId = PrimaryKey;
+
+            allCustomers.ThisCustomer.Find(PrimaryKey);
+
+            allCustomers.Delete();
+
+            Boolean Found = allCustomers.ThisCustomer.Find(PrimaryKey);
+
+            Assert.IsFalse(Found);
+
         }
+
+    }
 
     }
 

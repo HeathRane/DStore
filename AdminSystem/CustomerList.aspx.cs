@@ -28,10 +28,10 @@ public partial class _1_List : System.Web.UI.Page
 
         Customers.ThisCustomer.Find(CustomerId);
 
-       // lstCustomersList.DataSource = Customers.CustomerList; 
-       // lstCustomersList.DataValueField = "CustomerId";
-       // lstCustomersList.DataTextField = "Name";
-       // lstCustomersList.DataBind();
+        lstCustomersList.DataSource = Customers.CustomerList; 
+        lstCustomersList.DataValueField = "CustomerId";
+        lstCustomersList.DataTextField = "Name";
+        lstCustomersList.DataBind();
 
         txtCustomerId.Text = Customers.ThisCustomer.CustomerId.ToString();
         txtName.Text = Customers.ThisCustomer.Name;
@@ -54,8 +54,19 @@ public partial class _1_List : System.Web.UI.Page
 
     protected void btnDelete_Click(object sender, EventArgs e)
     {
-
+        Int32 CustomerId;
+        if (lstCustomersList.SelectedIndex != -1)
+        {
+            CustomerId = Convert.ToInt32(lstCustomersList.SelectedValue);
+            Session["CustomerId"] = CustomerId;
+            Response.Redirect("DeleteCustomer.aspx");
+        }
+        else
+        {
+            lblError.Text = "Please select a record to delete from the list";
+        }
     }
+
 
     protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
     {

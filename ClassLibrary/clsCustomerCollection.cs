@@ -104,6 +104,15 @@ namespace ClassLibrary
 
             return DB.Execute("sproc_table_Customer_Update");
         }
+
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection;
+
+            DB.AddParameter("@CustomerId", mThisCustomer.CustomerId);
+
+            DB.Execute("sproc_table_Customer_Delete");
+        }
     }
    
 }
