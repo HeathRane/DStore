@@ -11,6 +11,8 @@ namespace TestingCustomer
         //create some data to pass to the test 
         string Name = "Zeynep Tugce";
         string CustomerRegisteredDate = "07/03/2021";
+        string Point = "0";
+        string ProductId = "1";
 
         [TestMethod]
         public void InstanceOK()
@@ -249,7 +251,7 @@ namespace TestingCustomer
             //string variable to store any error message
             String Error = "";
             //invoke the method
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -263,7 +265,7 @@ namespace TestingCustomer
             //this should fail
             string Name = "";
             //invoke the method
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -286,7 +288,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -316,8 +318,8 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
-
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
+            
             //test to see that the result is correct
 
             Assert.AreNotEqual(Error, "");
@@ -344,7 +346,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -373,7 +375,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -401,7 +403,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -431,11 +433,11 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
 
         }
         [TestMethod]
@@ -460,7 +462,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name); ;
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId); 
 
             //test to see that the result is correct
 
@@ -500,7 +502,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -542,11 +544,11 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
 
         }
 
@@ -580,7 +582,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -620,7 +622,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -662,7 +664,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -688,7 +690,7 @@ namespace TestingCustomer
 
             //invoke the method
 
-            Error = theCustomer.Valid(CustomerRegisteredDate, Name);
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
 
             //test to see that the result is correct
 
@@ -696,7 +698,147 @@ namespace TestingCustomer
 
         }
 
+        [TestMethod]
+        public void PointMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomer theCustomer = new clsCustomer();
+            //string variable to store any error message
+            String Error = "";
+            //this should fail
+            string Point = "";
+            //invoke the method
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
 
+        public void PointMin()
+
+        {
+
+            //create an instance of the class we want to create
+
+            clsCustomer theCustomer = new clsCustomer();
+
+            //string variable to store any error message
+
+            String Error = "";
+
+            //create some test data to pass to the method
+
+            string Point = "0.1"; //this should be ok
+
+            //invoke the method
+
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
+
+            //test to see that the result is correct
+
+            Assert.AreEqual(Error, "");
+
+        }
+
+
+
+        [TestMethod]
+
+        public void PointMinPlusOne()
+
+        {
+
+            //create an instance of the class we want to create
+
+            clsCustomer theCustomer = new clsCustomer();
+
+            //string variable to store any error message
+
+            String Error = "";
+
+            //create some test data to pass to the method
+
+            string Name = "1.1"; //this should be ok
+
+            //invoke the method
+
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
+
+            //test to see that the result is correct
+
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ProductIdMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsCustomer theCustomer = new clsCustomer();
+            //string variable to store any error message
+            String Error = "";
+            //this should fail
+            string ProductId = "0";
+            //invoke the method
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        public void ProductIdMin()
+
+        {
+
+            //create an instance of the class we want to create
+
+            clsCustomer theCustomer = new clsCustomer();
+
+            //string variable to store any error message
+
+            String Error = "";
+
+            //create some test data to pass to the method
+
+            string ProductId = "1"; //this should be ok
+
+            //invoke the method
+
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
+
+            //test to see that the result is correct
+
+            Assert.AreEqual(Error, "");
+
+        }
+
+
+
+        [TestMethod]
+
+        public void ProductIdMinPlusOne()
+
+        {
+
+            //create an instance of the class we want to create
+
+            clsCustomer theCustomer = new clsCustomer();
+
+            //string variable to store any error message
+
+            String Error = "";
+
+            //create some test data to pass to the method
+
+            string Name = "2"; //this should be ok
+
+            //invoke the method
+
+            Error = theCustomer.Valid(CustomerRegisteredDate, Name, Point, ProductId);
+
+            //test to see that the result is correct
+
+            Assert.AreNotEqual(Error, "");
+
+        }
 
 
     }

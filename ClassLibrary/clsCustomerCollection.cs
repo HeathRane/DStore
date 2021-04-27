@@ -122,13 +122,13 @@ namespace ClassLibrary
             DB.Execute("sproc_table_Customer_Delete");
         }
 
-        public void ReportByName(string v)
+        public void ReportByName(string Name)
         {
             clsDataConnection DB = new clsDataConnection();
 
-            DB.AddParameter("@ProductId", Name);
+            DB.AddParameter("@Name", Name);
 
-            DB.Execute("sproc_table_Customer_FilterByProductId");
+            DB.Execute("sproc_table_Customer_FilterByName");
 
             PopulateArray(DB);
         }
