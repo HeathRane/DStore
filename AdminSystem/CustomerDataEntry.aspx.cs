@@ -8,11 +8,36 @@ using ClassLibrary;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
+
+    Int32 CustomerId;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        clsCustomer theCustomer = new clsCustomer();
-        theCustomer = (clsCustomer)Session["theCustomer"];
-        Response.Write(theCustomer.CustomerId);
+        CustomerId = Convert.ToInt32(Session["CustomerId"]);
+
+        if (IsPostBack == false)
+        {
+            if (CustomerId != -1)
+            {
+                DisplayCustomers();
+            }
+        }
+  
+    }
+
+    void DisplayCustomers()
+    {
+        clsCustomerCollection Customers = new clsCustomerCollection();
+
+        Customers.ThisCustomer.Find(CustomerId);
+
+        txtCustomerId.Text = Customers.ThisCustomer.CustomerId.ToString();
+        txtFullName.Text = Customers.ThisCustomer.Name;
+        txtRegisteredDate.Text = Customers.ThisCustomer.CustomerRegisteredDate.ToString();
+        txtProductId.Text = Customers.ThisCustomer.ProductId.ToString();
+        txtCustomerPoint.Text = Customers.ThisCustomer.Point.ToString();
+        Active.Checked = Customers.ThisCustomer.Active;
+       
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
@@ -26,11 +51,15 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //capture registered date
         string RegisteredDate = txtRegisteredDate.Text;
 
+        string ProductId = txtProductId.Text;
+
+        string Point = txtCustomerPoint.Text;
+        
         //variable to store any error messages
         string Error = "";
 
         //validate the data
-        Error = theCustomer.Valid(RegisteredDate, Name);
+        Error = theCustomer.Valid(RegisteredDate, Name, Point, ProductId);
         if (Error == "")
         {
             //capture the name
