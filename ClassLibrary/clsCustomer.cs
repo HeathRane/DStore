@@ -135,23 +135,23 @@ namespace ClassLibrary
 
             DateTime DateTemp;
 
+            DateTime Minimum;
+
             if (productId.Length == 0)
             {
                 Error = Error + "The ProductId may not be blank: ";
-
             }
 
             if (point.Length == 0.0)
             {
                 Error = Error + "The point may not be blank: ";
-
             }
 
             if (Name.Length == 0) 
             {
                 Error = Error + "The name may not be blank: ";
-
             }
+
             if (Name.Length > 50)
             {
                 Error = Error + "The name must contain less than 51 characters: ";
@@ -161,22 +161,26 @@ namespace ClassLibrary
             try
             {
                 DateTemp = Convert.ToDateTime(CustomerRegisteredDate);
-                if (DateTemp < DateTime.Now.Date)
-                {
-                    Error = Error + "the date cannot be in the past: ";
 
-                }
+                Minimum = DateTime.Now.Date;
 
+                Minimum = Minimum.AddMonths(-5);
+                
                 if (DateTemp > DateTime.Now.Date)
                 {
                     Error = Error + "the date cannot be in the future: ";
                 }
-           
+
+                if (DateTemp < Minimum)
+                {
+                    Error = Error + "the date cannot be in the very past: ";
+                }
             }
             catch
             {
                 Error = Error + "the date was not a valid date: ";
             }
+
             return Error;
             }
         
