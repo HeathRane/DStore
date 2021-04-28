@@ -106,10 +106,10 @@ namespace ClassLibrary
             if(DB.Count == 1)
             {
                 //copy the data from the database to the private data members
-                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerId"]);
+                mCustomerId = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
                 mCustomerRegisteredDate = Convert.ToDateTime(DB.DataTable.Rows[0]["RegisteredDate"]);
                 mName = Convert.ToString(DB.DataTable.Rows[0]["CustomerFullName"]);
-                mProductId = Convert.ToInt32(DB.DataTable.Rows[0]["ProductId"]);
+                mProductId = Convert.ToInt32(DB.DataTable.Rows[0]["ProductID"]);
                 mPoint = Convert.ToDouble(DB.DataTable.Rows[0]["CustomerPoint"]);
                 mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["CustomerActivity"]);
 
