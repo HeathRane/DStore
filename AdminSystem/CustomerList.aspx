@@ -19,7 +19,7 @@
         </div>
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />
         <asp:Button ID="btnEdit" runat="server" Height="28px" OnClick="btnEdit_Click1" style="margin-left: 30px" Text="Edit" Width="51px" />
-        <asp:Button ID="btnDelete" runat="server" style="margin-left: 30px" Text="Delete" Width="44px" />
+        <asp:Button ID="btnDelete" runat="server" style="margin-left: 30px" Text="Delete" Width="73px" OnClick="btnDelete_Click1" />
         <p style="width: 266px">
             <asp:Label ID="LblName" runat="server" Text="Enter Name"></asp:Label>
             <asp:TextBox ID="txtFilter" runat="server" style="margin-left: 28px" Width="128px"></asp:TextBox>
