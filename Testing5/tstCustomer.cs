@@ -10,7 +10,7 @@ namespace TestingCustomer
         //good test data
         //create some data to pass to the test 
         string Name = "Zeynep Tugce";
-        string CustomerRegisteredDate = "07/03/2021";
+        string CustomerRegisteredDate = "30/04/2021";
         string Point = "0";
         string ProductId = "1";
 
@@ -170,7 +170,7 @@ namespace TestingCustomer
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the registered date
-            if (theCustomer.CustomerRegisteredDate != Convert.ToDateTime("07/03/2021"))
+            if (theCustomer.CustomerRegisteredDate != Convert.ToDateTime("30/04/2021"))
             {
                 OK = false;
             }
