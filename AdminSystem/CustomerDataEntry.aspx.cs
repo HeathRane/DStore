@@ -44,7 +44,6 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
         //create a new instance of clsCustomer
         clsCustomer theCustomer = new clsCustomer();
-
         //capture the full name
         string Name = txtFullName.Text;
 
@@ -73,7 +72,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
             //capture productId
             theCustomer.ProductId = Convert.ToInt32(ProductId);
             //capture point
-            theCustomer.Point = Convert.ToDouble(CustomerPoint);
+            theCustomer.Point = Convert.ToDouble(Point);
 
             clsCustomerCollection CustomerList = new clsCustomerCollection();
 

@@ -38,7 +38,7 @@ public partial class _1_List : System.Web.UI.Page
 
         Session["CustomerId"] = -1 ;
 
-        Response.Redirect("theCustomer.aspx");
+        Response.Redirect("CustomerDataEntry.aspx");
     }
 
     protected void btnDelete_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ public partial class _1_List : System.Web.UI.Page
         {
             CustomerId = Convert.ToInt32(lstCustomersList.SelectedValue);
             Session["CustomerId"] = CustomerId;
-            Response.Redirect("theCustomer.aspx");
+            Response.Redirect("CustomerDataEntry.aspx");
         }
         else
         {

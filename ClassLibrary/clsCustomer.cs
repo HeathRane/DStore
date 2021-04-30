@@ -142,9 +142,9 @@ namespace ClassLibrary
                 Error = Error + "The ProductId may not be blank: ";
             }
 
-            if (point.Length == 0.0)
+            if (point.Length == 0)
             {
-                Error = Error + "The point may not be blank: ";
+                Error = Error + "The point may not be negative: ";
             }
 
             if (Name.Length == 0) 

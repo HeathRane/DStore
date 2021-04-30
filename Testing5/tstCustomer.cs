@@ -11,8 +11,8 @@ namespace TestingCustomer
         //create some data to pass to the test 
         string Name = "Zeynep Tugce";
         string CustomerRegisteredDate = "30/04/2021";
-        string Point = "0";
-        string ProductId = "1";
+        string Point = "0.0";
+        string ProductId = "40";
 
         [TestMethod]
         public void InstanceOK()
@@ -847,7 +847,7 @@ namespace TestingCustomer
 
             //create some test data to pass to the method
 
-            string Point = "0.1"; //this should be ok
+            string Point = "0.0"; //this should be ok
 
             //invoke the method
 
@@ -877,7 +877,7 @@ namespace TestingCustomer
 
             //create some test data to pass to the method
 
-            string Name = "1.1"; //this should be ok
+            string Name = "1.0"; //this should be ok
 
             //invoke the method
 

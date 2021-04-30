@@ -29,8 +29,7 @@
             <asp:CheckBox ID="Active" runat="server" />
         </p>
         <p>
-        <asp:Label ID="ErrorMessages" runat="server" Text="lblError"></asp:Label>
-            <asp:TextBox ID="lblError" runat="server"></asp:TextBox>
+        <asp:Label ID="lblError" runat="server" Text="lblError"></asp:Label>
         </p>
         <p>
             <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
