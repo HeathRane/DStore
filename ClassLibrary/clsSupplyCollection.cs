@@ -126,7 +126,7 @@ namespace ClassLibrary
                 clsSupply Supplier = new clsSupply();
                 //read in the fields from the current record 
                 Supplier.InStock = Convert.ToBoolean(DB.DataTable.Rows[Index]["InStock"]);
-                Supplier.ProductID = Convert.ToString(DB.)
+                
             }
         }
     }
