@@ -170,7 +170,7 @@ namespace TestingCustomer
             //invoke the method
             Found = theCustomer.Find(CustomerId);
             //check the registered date
-            if (theCustomer.CustomerRegisteredDate != Convert.ToDateTime("30/04/2021"))
+            if (theCustomer.CustomerRegisteredDate != Convert.ToDateTime("06/05/2021"))
             {
                 OK = false;
             }
