@@ -7,6 +7,13 @@ namespace Testing3
     [TestClass]
     public class tstStock
     {
+        int productId = 9;
+        string productName = "Metal Gear Solid";
+        DateTime releaseDate = Convert.ToDateTime("03/09/1998");
+        decimal price = Convert.ToDecimal(7.19);
+        bool inStock = true;
+        string productDesc = "You are Snake, a government agent on a mission to regain control of a secret nuclear weapons base from terrorist hands.";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -73,6 +80,115 @@ namespace Testing3
             Boolean TestData = true;
             AProduct.InStock = TestData;
             Assert.AreEqual(AProduct.InStock, TestData);
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsStock AProduct = new clsStock();
+            Boolean Found = false;
+            int ProductId = 1;
+            Found = AProduct.Find(ProductId);
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestProductIdFound()
+        {
+            clsStock AProduct = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ProductId = 11;
+            Found = AProduct.Find(ProductId);
+            if (AProduct.ProductId != 11)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestProductNameFound()
+        {
+            clsStock AProduct = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ProductId = 11;
+            Found = AProduct.Find(ProductId);
+            if (AProduct.ProductName != "Game 1")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestReleaseDateFound()
+        {
+            clsStock AProduct = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ProductId = 11;
+            Found = AProduct.Find(ProductId);
+            if (AProduct.ReleaseDate != Convert.ToDateTime("01/01/2001"))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPriceFound()
+        {
+            clsStock AProduct = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ProductId = 11;
+            Found = AProduct.Find(ProductId);
+            if (AProduct.Price != Convert.ToDecimal(10.00))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestInStockFound()
+        {
+            clsStock AProduct = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ProductId = 11;
+            Found = AProduct.Find(ProductId);
+            if (AProduct.InStock != true)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestProductDescriptionFound()
+        {
+            clsStock AProduct = new clsStock();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ProductId = 11;
+            Found = AProduct.Find(ProductId);
+            if (AProduct.ProductDescription != "A game.")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsStock AProduct = new clsStock();
+            string Error = "";
+            Error = AProduct.Valid(productId, productName, releaseDate, price, inStock, productDesc);
+            Assert.AreEqual(Error, "");
         }
     }
 }

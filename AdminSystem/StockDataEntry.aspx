@@ -11,7 +11,8 @@
         <div>
         </div>
         <asp:Label ID="lblProductId" runat="server" Text="Product ID " width="139px"></asp:Label>
-        <asp:TextBox ID="txtProductId" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtProductId" runat="server" type="number"></asp:TextBox>
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
         <p>
             <asp:Label ID="lblProductName" runat="server" Text="Product Name " width="139px"></asp:Label>
             <asp:TextBox ID="txtProductName" runat="server"></asp:TextBox>
@@ -27,6 +28,9 @@
         <br />
         <p>
             <asp:CheckBox ID="chkInStock" runat="server" Text="In Stock" />
+        </p>
+        <p>
+            <asp:Label ID="lblError" runat="server"></asp:Label>
         </p>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
