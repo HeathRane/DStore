@@ -8,6 +8,7 @@ using ClassLibrary;
 
 public partial class _1_DataEntry : System.Web.UI.Page
 {
+    //Int32 StaffNumber;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -17,12 +18,40 @@ public partial class _1_DataEntry : System.Web.UI.Page
 
     {
         clsStaff AStaff = new clsStaff();
+        //capture the info.
+        string StaffNumber = txtStaffNumber.Text;
+        string StaffName = txtStaffName.Text;
+        string StaffSalary = txtStaffSalary.Text;
+        string StaffCredit = txtStaffCredit.Text;
+        string StaffDate = txtStaffDate.Text;
+        string StaffStatus = chkStatus.Text;
+        //variable to store any error messages
+        string Error = "";
+        //validate the data
+        Error = AStaff.Valid(StaffNumber,StaffName, StaffSalary, StaffCredit, StaffDate,StaffStatus);
+        if(Error =="")
+        {
+            //capture the info.
+            
+            AStaff.StaffName = StaffName;
+            AStaff.StaffNumber = Convert.ToInt32(StaffNumber);
+            AStaff.StaffStatus = chkStatus.Checked;
+            AStaff.StaffCredit = Convert.ToInt32(StaffCredit);
+            AStaff.StaffSalary = Convert.ToDouble(StaffSalary);
+            AStaff.StaffDate = Convert.ToDateTime(StaffDate);
+            clsStaffCollection StaffList = new clsStaffCollection();
+            StaffList.ThisStaff = AStaff;
+            StaffList.Add();
+            Response.Write("StaffList.aspx");
+        }
+        else
+        {
+            //display the error message
+            lblError.Text = Error;
+        }
+        
 
-        AStaff.StaffName = txtStaffName.Text;
-
-        Session["AStaff"] = AStaff;
-
-        Response.Redirect("StaffViewer.aspx");
+        
     }
 
     protected void btnFind_Click(object sender, EventArgs e)
@@ -49,6 +78,11 @@ public partial class _1_DataEntry : System.Web.UI.Page
             txtStaffDate.Text = AStaff.StaffDate.ToString();
 
         }
+
+    }
+
+    protected void chkStatus_CheckedChanged(object sender, EventArgs e)
+    {
 
     }
 }

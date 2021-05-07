@@ -122,7 +122,47 @@ namespace ClassLibrary
             }
         }
 
-     
-   
+        public string Valid(string staffName, string staffDate, string staffSalary,string staffCredit,string staffStatus, string staffNumber)
+        {
+            //create a string variable to store the error
+            String Error = "";
+            //create a temporary variable to store date values
+            DateTime DateTemp;
+            //if the StaffNumber is blank
+            if(staffName.Length == 0)
+            {
+                //record the error
+                Error = Error + "the staff name may bot be blank: ";
+            }
+            //of the StaffNumberis greater than 8 characters
+            if(staffName.Length > 8)
+            {
+                //record the error
+                Error = Error + "the staff name must be less than 8 characters: ";
+            }
+          
+
+            try
+            {
+                //copy the date value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(staffDate);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "the date cannot be in the past: ";
+                }
+
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "the date cannot be in the future: ";
+                }
+            }
+            catch
+            {
+                Error = Error + "the date was not a valid date: ";
+            }
+            return Error;
+        }
     }
 }

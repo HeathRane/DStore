@@ -24,9 +24,12 @@
         <asp:Label ID="lblStaffDate" runat="server" Text="StaffDate"></asp:Label>
         <asp:TextBox ID="txtStaffDate" runat="server"></asp:TextBox>
         <p>
-            <asp:CheckBox ID="chkStatus" runat="server" Text="Full-time" />
+            <asp:CheckBox ID="chkStatus" runat="server" Text="Full-time" OnCheckedChanged="chkStatus_CheckedChanged" />
         </p>
-        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
+        <p >
+            <asp:Label ID="lblError" runat="server"></asp:Label>
+        </p>
+        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" style="height: 29px; width: 37px" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
     </form>
 </body>
