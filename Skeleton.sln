@@ -11,11 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing2", "Testing2\Testin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingStock", "Testing3\TestingStock.csproj", "{CDEAB9D5-740F-43A5-953F-FC14371EFFAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing6", "Testing6\Testing6.csproj", "{288EB452-7B75-4934-B0BB-07415B6A81FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingSupply", "Testing6\TestingSupply.csproj", "{288EB452-7B75-4934-B0BB-07415B6A81FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingOrders", "Testing4\TestingOrders.csproj", "{A3AA37D5-DAA0-4AF0-AD82-419646520965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing5", "Testing5\Testing5.csproj", "{9C362115-AD6C-43F8-AFB0-04495D632CB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingCustomer", "Testing5\TestingCustomer.csproj", "{9C362115-AD6C-43F8-AFB0-04495D632CB3}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AdminSystem", "AdminSystem\", "{452F0A25-A23F-4FED-90A2-BDC9E42CEA1C}"
 	ProjectSection(WebsiteProperties) = preProject
